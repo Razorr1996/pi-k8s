@@ -9,3 +9,15 @@ source .env # for K3S_TOKEN
 
 curl -sfL https://get.k3s.io | sh -s - server
 ```
+
+## Plan
+- [x] Install k3s
+- [ ] Cilium
+- [ ] CD — ArgoCD?
+- [ ] MetalLB
+- [ ] Ingress Controller — Nginx?
+- [ ] Cert Manager
+- [ ] Prometheus + Grafana
+- [ ] Longhorn
+- [ ] Loki
+- ... Other apps
