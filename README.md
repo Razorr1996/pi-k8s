@@ -44,9 +44,12 @@ helm upgrade --install argocd argo/argo-cd \
 - [x] Install k3s
 - [x] Cilium
 - [x] ArgoCD
+  - - [ ] Alerts to Telegram
 - [ ] Cert Manager
+  - [ ] Configure Route53 integration
 - [ ] Ingress Controller
 - [ ] Prometheus + Grafana
+  - [ ] Alerts to Telegram
 - [ ] Longhorn
 - [ ] Loki
 - ... Other apps
