@@ -10,9 +10,27 @@ source .env # for K3S_TOKEN
 curl -sfL https://get.k3s.io | sh -s - server
 ```
 
+## Cilium installation
+```shell
+helm repo add cilium https://helm.cilium.io/
+helm repo update
+
+CILIUM_VERSION=1.16.3
+
+helm diff upgrade cilium cilium/cilium \
+  --version "${CILIUM_VERSION}" \
+  --namespace kube-system \
+  --values cilium-values.yaml
+
+helm upgrade --install cilium cilium/cilium \
+  --version "${CILIUM_VERSION}" \
+  --namespace kube-system \
+  --values cilium-values.yaml
+```
+
 ## Plan
 - [x] Install k3s
-- [ ] Cilium
+- [x] Cilium
 - [ ] CD — ArgoCD?
 - [ ] MetalLB
 - [ ] Ingress Controller — Nginx?
