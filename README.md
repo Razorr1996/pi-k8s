@@ -28,13 +28,24 @@ helm upgrade --install cilium cilium/cilium \
   --values cilium-values.yaml
 ```
 
+## ArgoCD installation
+```shell
+helm repo add argo https://argoproj.github.io/argo-helm
+helm repo update
+
+helm upgrade --install argocd argo/argo-cd \
+  --version 7.6.12 \
+  --create-namespace \
+  --namespace argocd \
+  --values argocd-values.yaml
+```
+
 ## Plan
 - [x] Install k3s
 - [x] Cilium
-- [ ] CD — ArgoCD?
-- [ ] MetalLB
-- [ ] Ingress Controller — Nginx?
+- [x] ArgoCD
 - [ ] Cert Manager
+- [ ] Ingress Controller
 - [ ] Prometheus + Grafana
 - [ ] Longhorn
 - [ ] Loki
