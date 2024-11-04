@@ -1,6 +1,7 @@
 # Home Kubernetes Cluster on Raspberry Pi
 
 ## Installation
+
 ```shell
 export INSTALL_K3S_VERSION=v1.31.2+k3s1
 export INSTALL_K3S_EXEC='--flannel-backend=none --disable-network-policy --disable=servicelb --disable=traefik'
@@ -11,6 +12,7 @@ curl -sfL https://get.k3s.io | sh -s - server
 ```
 
 ## Cilium installation
+
 ```shell
 helm repo add cilium https://helm.cilium.io/
 helm repo update
@@ -29,6 +31,7 @@ helm upgrade --install cilium cilium/cilium \
 ```
 
 ## ArgoCD installation
+
 ```shell
 helm repo add argo https://argoproj.github.io/argo-helm
 helm repo update
@@ -41,16 +44,17 @@ helm upgrade --install argocd argo/argo-cd \
 ```
 
 ## Plan
-- [x] Install k3s
-- [x] Cilium
-- [x] ArgoCD
-  - [ ] Alerts to Telegram
+
+- [x] Install Kubernetes Cluster (k3s)
+- [x] CNI plugin (Cilium)
+- [x] CD (ArgoCD)
+    - [ ] Alerts (Telegram?)
 - [ ] Cert Manager
-  - [ ] Configure Route53 integration
-- [ ] Ingress Controller
-  - [ ] Global oauth
-- [ ] Prometheus + Grafana
-  - [ ] Alerts to Telegram
-- [ ] Longhorn
-- [ ] Loki
+    - [ ] Configure DNS integration (Route53?)
+- [ ] Ingress Controller (Nginx?)
+    - [ ] Global oauth (oauth2-proxy? + Auth0?)
+- [ ] Monitoring (Prometheus+Grafana?)
+    - [ ] Alerts (Telegram?)
+- [ ] CSI Driver (Longhorn or Rook?)
+- [ ] Logs aggregation (Loki?)
 - ... Other apps
