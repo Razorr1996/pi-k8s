@@ -1,4 +1,9 @@
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: wireguard
+---
 apiVersion: vpn.wireguard-operator.io/v1alpha1
 kind: Wireguard
 metadata:
