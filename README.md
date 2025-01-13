@@ -17,7 +17,7 @@ curl -sfL https://get.k3s.io | sh -s - server
 helm repo add cilium https://helm.cilium.io/
 helm repo update
 
-CILIUM_VERSION=1.16.3
+CILIUM_VERSION=1.16.5
 
 helm diff upgrade cilium cilium/cilium \
   --version "${CILIUM_VERSION}" \
